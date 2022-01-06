@@ -1,0 +1,3 @@
+The navbar and main.html will be used for everything after you've logged
+into the account. The initial landing page, login, and signup are their own
+templates due to the limited functionality there. 
