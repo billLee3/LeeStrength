@@ -3,4 +3,5 @@ from django.http import HttpResponse
 
 # Create your views here.
 def workouts(request):
-    return HttpResponse("Hello, world. You're at the Workouts url.")
+    context = {}
+    return render(request, 'workouts/workouts.html', context)
