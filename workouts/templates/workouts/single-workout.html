@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% for exercise in exercises %}
+<div>
+    <div>
+        <p>{{exercise.exercise_name}}</p>
+        <p>Sets: {{exercise.sets}}</p>
+        <p>Weight Lifted: {{exercise.weight_lifted}}</p>
+        <p>Reps: {{exercise.repetitions}}</p>
+    </div>
+</div>
+
+{% endfor %}
+{% endblock content %}

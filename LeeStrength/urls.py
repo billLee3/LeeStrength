@@ -20,5 +20,6 @@ urlpatterns = [
     path('', include('base.urls')),
     path('workouts/', include('workouts.urls')),
     path('cardio/', include('cardio.urls')),
+    path('nutrition/', include('nutrition.urls')),
     path('admin/', admin.site.urls),
 ]

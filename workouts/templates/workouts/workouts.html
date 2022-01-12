@@ -2,6 +2,12 @@
 
 {% block content %}
 
-<p>Congratulations!!! You've made it to the workouts page!</p>
+{% for workout in workouts %}
 
+<div>
+    <h2>{{workout.category}}</h2>
+    <h4><a href="{% url 'workout' workout.id %}">{{workout.timestamp}}</a></h4>
+</div>
+
+{% endfor %}
 {% endblock content %}

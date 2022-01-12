@@ -24,6 +24,9 @@ class Weight(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     #Relationships
     owner = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return str(str(self.timestamp)[0:19] + "-" + self.owner.username)
 
 class Goal(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
@@ -32,5 +35,8 @@ class Goal(models.Model):
     long_description = models.CharField(max_length=500, blank=False, null=False, default="Get Better")
     #Relationships
     owner = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return str(self.short_description + "-" + self.owner.username)
     
     
