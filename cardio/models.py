@@ -28,6 +28,9 @@ class IntervalTraining(models.Model):
     def __str__(self):
         return str(self.associated_cardio_workout.owner.username + '-' + str(self.associated_cardio_workout.timestamp))
 
+    def get_fields(self):
+        return [(field.name, getattr(self, field.name)) for field in IntervalTraining._meta.fields]
+
 class Distance(models.Model):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
     distance = models.FloatField() # assume miles for measurement

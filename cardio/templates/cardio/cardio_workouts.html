@@ -2,6 +2,8 @@
 {% load static %}
 {% block content %}
 
-<p>Congratulations! You've reached the cardio workouts page. </p>
+{% for workout in workouts %}
+    <p><a href="{% url 'cardioworkout' workout.id %}">Date: {{workout.timestamp}} | Type: {{workout.cardio_type}}</a></p>
+{% endfor %}
 
 {% endblock content %} 
