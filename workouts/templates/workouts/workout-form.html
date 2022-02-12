@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="workout_{{field.label}}">   
+        {{field.label}}
+        {{field}}
+    </div> 
+    {% endfor %}
+    <input type="submit">
+</form>
+
+{% endblock content %}

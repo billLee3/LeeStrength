@@ -10,6 +10,9 @@
         <p>Weight Lifted: {{exercise.weight_lifted}}</p>
         <p>Reps: {{exercise.repetitions}}</p>
     </div>
+    <span><a href="{% url 'create-exercise' %}">Add Exercise</a></span>
+    <span><a href="{% url 'update-exercise' exercise.id %}">Edit Exercise</a></span>
+    <span><a href="{% url 'delete-exercise' exercise.id %}">Delete Exercise</a></span>
 </div>
 
 {% endfor %}

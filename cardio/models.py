@@ -6,8 +6,13 @@ from base.models import Profile
 # Create your models here.
 
 class CardioWorkout(models.Model):
+    CARDIO_EXERCISES = (
+        ('interval training', 'interval training'),
+        ('sprint', 'sprint'),
+        ('distance run', 'distance run')
+    ) 
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
-    cardio_type = models.CharField(max_length=200, null=False, blank=False, default="Run")
+    cardio_type = models.CharField(max_length=200, null=False, blank=False, choices=CARDIO_EXERCISES, default="distance run")
     timestamp = models.DateField(auto_now_add=True)
     #Relsationships
     owner = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True)
@@ -43,8 +48,12 @@ class Distance(models.Model):
         return str(self.associated_cardio_workout.owner.username + '-' + str(self.associated_cardio_workout.timestamp) + '-' + str(self.distance) + "miles")
 
 class Sprint(models.Model):
+    SPRINT_EXERCISES = (
+        ('distance', 'Distance run'),
+        ('time', 'For time'),
+    )
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
-    sprint_type = models.TextChoices('SprintType', 'DISTANCE TIME')
+    sprint_type = models.CharField(max_length=200, null=False, blank=False, choices=SPRINT_EXERCISES, default="time")
     sprint_distance = models.FloatField(null=True, blank=True)
     sprint_time = models.FloatField(null=True, blank=True)
     rest_period = models.FloatField(default=0)

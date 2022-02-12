@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
+    'dashboard.apps.DashboardConfig',
     'workouts.apps.WorkoutsConfig',
     'cardio.apps.CardioConfig',
     'nutrition.apps.NutritionConfig',

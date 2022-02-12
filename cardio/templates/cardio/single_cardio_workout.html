@@ -2,18 +2,6 @@
 {% load static %}
 {% block content %}
 
-
-{% for entry in workout_data%}
-    {% for name, value in entry.get_fields %}
-        {% if value %}
-            {% if name == "id" or name == "associated_cardio_workout" %}
-                <p class="hide"></p>
-            {% else %}
-            <p>{{name}} : {{value}}</p>
-            <br>
-            {% endif %}
-        {%endif%}
-    {%endfor%}
-{% endfor %}
+{{exercise.id}}
 
 {% endblock content %} 

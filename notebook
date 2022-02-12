@@ -2,4 +2,11 @@ The navbar and main.html will be used for everything after you've logged
 into the account. The initial landing page, login, and signup are their own
 templates due to the limited functionality there. 
 
+Make sure on the login page that an email is provided on sign up and that 
+this is feed to the signals.py in that application. 
 
+#Routing in the cardio app. 
+Figure out how to dynamically render data from various database types.
+Then auto fill in the associated user or the associated workout. 
+    One theory would just change to one to one relationship on the database model because there should only be one exercise per cardio workout
+    

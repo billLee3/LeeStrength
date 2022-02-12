@@ -11,7 +11,7 @@ class Workout(models.Model):
     owner = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return str(self.owner.username + "-" + str(self.timestamp))
+        return str(self.owner.username + "-" + self.category + "-" + str(self.timestamp)[0:10])
 
 class Exercise(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
